@@ -1,1 +1,91 @@
-\n 
+Kafka:
+
+Pub/Sub model:
+Pub(Producer) <---------------> [Message Broker {Kafka Server} ]  <-------------------> Sub(Consumer)
+
+Arch & Components [Core components]:
+
+->Producer:
+
+->Consumer:
+
+->Broker:
+
+->Cluster:
+	Group of Servers/Brokers
+	There can be multiple brokers inside a cluster
+	eg: if there is alot of data produced by producer then a single broker couldn't manage then we can get extra from cluster
+	
+->Topic:
+	Its present inside broker
+	You can add Topics according to data
+	prd,con will produce or consume data to/from topics
+	
+->Partitions:
+	eg: prod is sending millions of messages to topic
+	can topic handle those many messages? its very challenging
+	In such senarios we can use partitions
+	and distribute them across diff machines[This concept is called topic partitioning] and each part is called Partition.
+	this helps for high performance.
+	
+->Offset:
+	Its basically the index of data
+	eachtime the data goes in to partition, It will be assigned to a offset[index]
+	why?
+	if a consumer is consuming data from partition and it goes down, again it will come online then it will continue based on this offset
+	
+->Consumer Group:
+	Consumer Group is a group of consumers.
+	eg:alot of data in partions can't be assigned to a single consumer
+	so same as dividing topics-> partitions,here consumer group will have manay consumers each consumer can be assigned to a partions
+	this concept is called consumer load balencing
+	
+->Zookeeper:
+	It tracks the status of your kafka cluster, Kafka topics,partions,offsets etc....
+	
+Kafka CLI
+kafka commands
+
+1)start Zookeeper  [.\zookeeper-server-start.bat ..\..\config\zookeeper.properties] 2181
+2)start kafka server or broker [.\kafka-server-start.bat ..\..\config\server.properties] 9092
+3)create topic [.\kafka-topics.bat --bootstrap-server localhost:9092 --create --topic cwg-topic --partitions 3 --replication-factor 1]
+--topic <name of topic>
+--partitions <number of partions>
+--replication-factor <number>
+
+.\kafka-topics.bat --bootstrap-server localhost:9092 --describe --topic prac-topic
+it will describe topic
+.\kafka-topics.bat --bootstrap-server localhost:9092 --list
+this will list all the topics
+
+4)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
