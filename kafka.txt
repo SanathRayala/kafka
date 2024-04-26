@@ -55,11 +55,12 @@ kafka commands
 
 .\kafka-topics.bat --bootstrap-server localhost:9092 --describe --topic prac-topic
 it will describe topic
+
 .\kafka-topics.bat --bootstrap-server localhost:9092 --list
 this will list all the topics
 
-4)
-
+4)start producer [.\kafka-console-producer.bat --broker-list localhost:9092 --topic cwg-topic]
+5)start consumer [.\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic cwg-topic --from-beginning]
 
 
 
