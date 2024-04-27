@@ -46,8 +46,8 @@ Arch & Components [Core components]:
 Kafka CLI
 kafka commands
 
-1)start Zookeeper  [.\zookeeper-server-start.bat ..\..\config\zookeeper.properties] 2181
-2)start kafka server or broker [.\kafka-server-start.bat ..\..\config\server.properties] 9092
+1)start Zookeeper  [ .\zookeeper-server-start.bat ..\..\config\zookeeper.properties ] 2181
+2)start kafka server or broker [ .\kafka-server-start.bat ..\..\config\server.properties ] 9092
 3)create topic [.\kafka-topics.bat --bootstrap-server localhost:9092 --create --topic cwg-topic --partitions 3 --replication-factor 1]
 --topic <name of topic>
 --partitions <number of partions>
